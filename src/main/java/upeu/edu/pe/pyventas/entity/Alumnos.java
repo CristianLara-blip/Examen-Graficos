@@ -12,49 +12,44 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Libro implements Serializable {
+public class Alumnos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int idlibro;
 	private String nombre;
-	private String autor;
-	private String editorial;
-
-	public int getIdlibro() {
-		return idlibro;
-	}
-
-	public void setIdlibro(int idlibro) {
-		this.idlibro = idlibro;
-	}
+	private String grado;
+	private String curso;
+	private String sexo;
 
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getAutor() {
-		return autor;
+	public String getGrado() {
+		return grado;
 	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setGrado(String grado) {
+		this.grado = grado;
 	}
-
-	public String getEditorial() {
-		return editorial;
+	public String getCurso() {
+		return curso;
 	}
-
-	public void setEditorial(String editorial) {
-		this.editorial = editorial;
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
-
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	
+	
+	
+	
 }

@@ -7,25 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import upeu.edu.pe.pyventas.dao.Operaciones;
-import upeu.edu.pe.pyventas.daoImpl.PrestamoDaoIMpl;
-import upeu.edu.pe.pyventas.entity.Prestamo;
+import upeu.edu.pe.pyventas.daoImpl.AlumnosDaoIMpl;
+import upeu.edu.pe.pyventas.entity.Alumnos;
+
 
 @Service
-public class PrestamoService implements Operaciones<Prestamo> {
-	
+public class AlumnosService implements Operaciones<Alumnos>{
 
-	
 	@Autowired
-	private PrestamoDaoIMpl daoImpl;
+	private AlumnosDaoIMpl daoImpl;
 
 	@Override
-	public int create(Prestamo t) {
+	public int create(Alumnos t) {
 		// TODO Auto-generated method stub
 		return daoImpl.create(t);
 	}
 
 	@Override
-	public int update(Prestamo t, int id) {
+	public int update(Alumnos t, int id) {
 		// TODO Auto-generated method stub
 		return daoImpl.update(t, id);
 	}
@@ -37,13 +36,13 @@ public class PrestamoService implements Operaciones<Prestamo> {
 	}
 
 	@Override
-	public Prestamo read(int id) {
+	public Alumnos read(int id) {
 		// TODO Auto-generated method stub
 		return daoImpl.read(id);
 	}
 
 	@Override
-	public List<Prestamo> reaAll() {
+	public List<Alumnos> reaAll() {
 		// TODO Auto-generated method stub
 		return daoImpl.reaAll();
 	}
