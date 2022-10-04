@@ -11,26 +11,33 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlumInicio {
+public class Producto {
 
 	private static final long serialVersionUID = 1L;
-
-	private String nombre;
-	private String anyo_inicio;
 	
-	public String getNombre() {
-		return nombre;
+	private String cantidad;
+	private String categoria;
+
+	public String getCantidad() {
+		return cantidad;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setCantidad(String cantidad) {
+		this.cantidad = cantidad;
 	}
-	public String getAnyo_inicio() {
-		return anyo_inicio;
+
+	public String getCategoria() {
+		return categoria;
 	}
-	public void setAnyo_inicio(String anyo_inicio) {
-		this.anyo_inicio = anyo_inicio;
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	
+	
 }

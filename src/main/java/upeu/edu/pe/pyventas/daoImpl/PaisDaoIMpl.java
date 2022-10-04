@@ -10,21 +10,21 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import upeu.edu.pe.pyventas.dao.Operaciones;
-import upeu.edu.pe.pyventas.entity.AlumInicio;
+import upeu.edu.pe.pyventas.entity.Pais;
 
 @Component
-public class AlumInicioDaoIMpl implements Operaciones<AlumInicio> {
+public class PaisDaoIMpl implements Operaciones<Pais> {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public int create(AlumInicio t) {
+	public int create(Pais t) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(AlumInicio t, int id) {
+	public int update(Pais t, int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -36,19 +36,18 @@ public class AlumInicioDaoIMpl implements Operaciones<AlumInicio> {
 	}
 
 	@Override
-	public AlumInicio read(int id) {
+	public Pais read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<AlumInicio> reaAll() {
+	public List<Pais> reaAll() {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.query("select p.nombre, c.anyo_inicio from alumno_se_matricula_asignatura asma \r\n"
-				+ "inner join persona p  \r\n"
-				+ "on asma.id_alumno=  p.id  \r\n"
-				+ "inner join curso_escolar c  \r\n"
-				+ "on  asma.id_curso_escolar= c.id;", new BeanPropertyRowMapper<AlumInicio>(AlumInicio.class));
+		return jdbcTemplate.query("select o.ShipCountry Orden,count(c.CustomerID) as Cantidad from orders o  \r\n"
+				+ "inner join customers c\r\n"
+				+ "on  o.CustomerID =c.CustomerID\r\n"
+				+ "group by c.Country order by 2;", new BeanPropertyRowMapper<Pais>(Pais.class));
 	}
 
 	@Override

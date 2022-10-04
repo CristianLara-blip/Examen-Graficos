@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import upeu.edu.pe.pyventas.entity.AlumInicio;
-import upeu.edu.pe.pyventas.service.AlumInicioService;
+import upeu.edu.pe.pyventas.entity.Producto;
+import upeu.edu.pe.pyventas.service.ProductoService;
 
 @RestController
-@RequestMapping("/api/aluminicio")
-public class AlumInicioController {
+@RequestMapping("/api/producto")
+public class ProductoController {
 
 	@Autowired
-	private AlumInicioService aluminicioService;
+	private ProductoService productoService;
 	
 	@GetMapping("/all")
-	public List<AlumInicio> readAll(){		
-		return aluminicioService.reaAll();
+	public List<Producto> readAll(){		
+		return productoService.reaAll();
 	}
 	
 	@GetMapping("/{id}")
-	public AlumInicio read(@PathVariable int id){		
-		return aluminicioService.read(id);
+	public Producto read(@PathVariable int id){		
+		return productoService.read(id);
 	}
 	
 	@PostMapping("/save")
-	public int save(@RequestBody AlumInicio aluminicio){		
-		return aluminicioService.create(aluminicio);
+	public int save(@RequestBody Producto producto){		
+		return productoService.create(producto);
 	}	
 	
 	@PutMapping("/update/{id}")
-    public String update(@RequestBody AlumInicio aluminicio, @PathVariable int id) {
-        return aluminicioService.update(aluminicio, id)+ "ok";
+    public String update(@RequestBody Producto producto, @PathVariable int id) {
+        return productoService.update(producto, id)+ "ok";
     }
 	
 	@DeleteMapping("/del/{id}")
 	public int save(@PathVariable int id){		
-		return aluminicioService.delete(id);
+		return productoService.delete(id);
 	}
 
 }

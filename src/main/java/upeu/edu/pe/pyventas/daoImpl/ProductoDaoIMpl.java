@@ -9,21 +9,21 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import upeu.edu.pe.pyventas.dao.Operaciones;
-import upeu.edu.pe.pyventas.entity.Profesores;
+import upeu.edu.pe.pyventas.entity.Producto;
 
 @Component
-public class ProfesoresDaoIMpl  implements Operaciones<Profesores>{
+public class ProductoDaoIMpl implements Operaciones<Producto> {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public int create(Profesores t) {
+	public int create(Producto t) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(Profesores t, int id) {
+	public int update(Producto t, int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -35,19 +35,18 @@ public class ProfesoresDaoIMpl  implements Operaciones<Profesores>{
 	}
 
 	@Override
-	public Profesores read(int id) {
+	public Producto read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Profesores> reaAll() {
+	public List<Producto> reaAll() {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.query("select p.id_profesor, p2.nombre, d.nombre as\"departamento\"from profesor p\r\n"
-				+ "inner join persona p2  \r\n"
-				+ "on p.id_profesor= p2.id \r\n"
-				+ "inner join departamento d \r\n"
-				+ "on p.id_departamento= d.id ;", new BeanPropertyRowMapper<Profesores>(Profesores.class));
+		return jdbcTemplate.query("select c.CategoryName as categoria,count(p.CategoryID) as cantidad from products p \r\n"
+				+ "inner join categories c\r\n"
+				+ "on  p.CategoryID =c.CategoryID\r\n"
+				+ "group by p.CategoryID order by 2;", new BeanPropertyRowMapper<Producto>(Producto.class));
 	}
 
 	@Override
@@ -59,3 +58,4 @@ public class ProfesoresDaoIMpl  implements Operaciones<Profesores>{
 	
 	
 }
+

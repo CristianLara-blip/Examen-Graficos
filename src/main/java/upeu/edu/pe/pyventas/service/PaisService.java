@@ -6,26 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import upeu.edu.pe.pyventas.dao.Operaciones;
-import upeu.edu.pe.pyventas.daoImpl.AlumnosDaoIMpl;
-import upeu.edu.pe.pyventas.daoImpl.EstudiantesDaoIMpl;
-import upeu.edu.pe.pyventas.entity.Alumnos;
-import upeu.edu.pe.pyventas.entity.Estudiantes;
-
-
+import upeu.edu.pe.pyventas.daoImpl.PaisDaoIMpl;
+import upeu.edu.pe.pyventas.entity.Pais;
 @Service
-public class EstudiantesService implements Operaciones<Estudiantes> {
+
+public class PaisService implements  Operaciones<Pais>{
 	
 	@Autowired
-	private EstudiantesDaoIMpl daoImpl;
+	private PaisDaoIMpl daoImpl;
 
 	@Override
-	public int create(Estudiantes t) {
+	public int create(Pais t) {
 		// TODO Auto-generated method stub
 		return daoImpl.create(t);
 	}
 
 	@Override
-	public int update(Estudiantes t, int id) {
+	public int update(Pais t, int id) {
 		// TODO Auto-generated method stub
 		return daoImpl.update(t, id);
 	}
@@ -37,13 +34,13 @@ public class EstudiantesService implements Operaciones<Estudiantes> {
 	}
 
 	@Override
-	public Estudiantes read(int id) {
+	public Pais read(int id) {
 		// TODO Auto-generated method stub
 		return daoImpl.read(id);
 	}
 
 	@Override
-	public List<Estudiantes> reaAll() {
+	public List<Pais> reaAll() {
 		// TODO Auto-generated method stub
 		return daoImpl.reaAll();
 	}
@@ -53,4 +50,5 @@ public class EstudiantesService implements Operaciones<Estudiantes> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+ 
 }

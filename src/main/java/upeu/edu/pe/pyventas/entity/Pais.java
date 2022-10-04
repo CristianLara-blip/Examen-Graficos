@@ -1,6 +1,6 @@
 package upeu.edu.pe.pyventas.entity;
-
 import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,26 +11,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-
-public class Estudiantes {
-	
+public class Pais {
 	private static final long serialVersionUID = 1L;
-	private String nombre;
-	private String telefono;
-	public String getNombre() {
-		return nombre;
+    private String Cantidad;
+	private String Orden;
+	
+	public String getCantidad() {
+		return Cantidad;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setCantidad(String cantidad) {
+		Cantidad = cantidad;
 	}
-	public String getTelefono() {
-		return telefono;
+	public String getOrden() {
+		return Orden;
 	}
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void setOrden(String orden) {
+		Orden = orden;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	
+	
+	
+	
 }

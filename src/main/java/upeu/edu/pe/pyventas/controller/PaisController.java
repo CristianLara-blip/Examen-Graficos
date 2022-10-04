@@ -1,4 +1,5 @@
 package upeu.edu.pe.pyventas.controller;
+
 import java.util.List;
 import java.util.Map;
 
@@ -12,39 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import upeu.edu.pe.pyventas.entity.Estudiantes;
-import upeu.edu.pe.pyventas.service.EstudiantesService;
+import upeu.edu.pe.pyventas.entity.Pais;
+import upeu.edu.pe.pyventas.service.PaisService;
 
 @RestController
-@RequestMapping("/api/estudiantes")
+@RequestMapping("/api/pais")
 
-public class EstudiantesController {
+public class PaisController {
+
 	@Autowired
-	private EstudiantesService estudiantesService;
+	private PaisService paisService;
 	
 	@GetMapping("/all")
-	public List<Estudiantes> readAll(){		
-		return estudiantesService.reaAll();
+	public List<Pais> readAll(){		
+		return paisService.reaAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Estudiantes read(@PathVariable int id){		
-		return estudiantesService.read(id);
+	public Pais read(@PathVariable int id){		
+		return paisService.read(id);
 	}
 	
 	@PostMapping("/save")
-	public int save(@RequestBody Estudiantes estudiantes){		
-		return estudiantesService.create(estudiantes);
+	public int save(@RequestBody Pais pais){		
+		return paisService.create(pais);
 	}	
 	
 	@PutMapping("/update/{id}")
-    public String update(@RequestBody Estudiantes estudiantes, @PathVariable int id) {
-        return estudiantesService.update(estudiantes, id)+ "ok";
+    public String update(@RequestBody Pais pais, @PathVariable int id) {
+        return paisService.update(pais, id)+ "ok";
     }
 	
 	@DeleteMapping("/del/{id}")
 	public int save(@PathVariable int id){		
-		return estudiantesService.delete(id);
+		return paisService.delete(id);
 	}
 
 }
